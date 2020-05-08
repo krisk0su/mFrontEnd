@@ -5,7 +5,7 @@ import { Card, Icon, Image } from "semantic-ui-react";
 import { IMovie } from "../Interfaces/IMovie";
 
 export const Movies = () => {
-  const [moviez, setMovies] = useState([]);
+  const [movies, setMovies] = useState([]);
 
   const fetchData = async () => {
     const moviesRes = await axios("http://localhost:3000/movies/all");
@@ -16,12 +16,12 @@ export const Movies = () => {
   }, []);
   const displayMovies = () => {
     return (
-      <Card.Group itemsPerRow={4}>
-        {moviez.map((mov: IMovie) => (
+      <Card.Group itemsPerRow={8}>
+        {movies.map((mov: IMovie) => (
           <Movie Movie={mov} />
         ))}
       </Card.Group>
     );
   };
-  return <Fragment>{moviez && displayMovies()}</Fragment>;
+  return <Fragment>{movies && displayMovies()}</Fragment>;
 };

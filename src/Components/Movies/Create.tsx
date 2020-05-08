@@ -22,6 +22,7 @@ export const Create = () => {
     if (year) link += `&y=${year}`;
     link += "&plot=full";
     const res = await axios.get(link);
+    console.log("res", res);
     return res.data;
   };
   const handleName = (
@@ -76,10 +77,10 @@ export const Create = () => {
     setGenre(res.Genre);
   };
   const onSubmit = async () => {
-    await axios.post("http://localhost:5000/movies/create", {
+    const res = await axios.post("http://localhost:5000/movies/create", {
       title,
       plot,
-      year,
+      year: movieYear,
       genre,
       actors,
       poster,
@@ -88,39 +89,48 @@ export const Create = () => {
   return (
     <div>
       <Form onSubmit={onGetDetails}>
-        <Form.Input
-          placeholder="Name"
-          name="name"
-          value={name}
-          onChange={handleName as any}
-          label="Movie Name"
-        />
-        <Form.Input
-          placeholder="Name"
-          name="year"
-          value={year}
-          onChange={handleYear as any}
-          label="Movie Year"
-        />
+        <Form.Group>
+          <Form.Input
+            width="6"
+            placeholder="Name"
+            name="name"
+            value={name}
+            onChange={handleName as any}
+            label="Movie Name"
+          />
+          <Form.Input
+            width="6"
+            placeholder="Name"
+            name="year"
+            value={year}
+            onChange={handleYear as any}
+            label="Movie Year"
+          />
+        </Form.Group>
         <Form.Button content="Get Movie Details" />
       </Form>
       <Fragment>
         {(title || movieYear) && (
           <Form onSubmit={onSubmit}>
-            <Form.Input
-              name="title"
-              value={title}
-              onChange={handleMovie as any}
-              placeholder="Movie Name"
-              label="Movie Name"
-            />
-            <Form.Input
-              name="year"
-              value={movieYear}
-              onChange={handleMovie as any}
-              placeholder="Movie Year"
-              label="Movie Year"
-            />
+            <Form.Group>
+              <Form.Input
+                width="6"
+                name="title"
+                value={title}
+                onChange={handleMovie as any}
+                placeholder="Movie Name"
+                label="Movie Name"
+              />
+              <Form.Input
+                width="6"
+                name="year"
+                value={movieYear}
+                onChange={handleMovie as any}
+                placeholder="Movie Year"
+                label="Movie Year"
+              />
+            </Form.Group>
+
             <Form.Input
               control={TextArea}
               placeholder="Plot"
@@ -129,25 +139,31 @@ export const Create = () => {
               onChange={handleMovie as any}
               label="Movie Plot"
             />
-            <Form.Input
-              name="genre"
-              value={genre}
-              onChange={handleMovie as any}
-              placeholder="Genre"
-              label="Movie Genre"
-            />
-            <Form.Input
-              name="actors"
-              value={actors}
-              onChange={handleMovie as any}
-              placeholder="Actors"
-              label="Movie Actors"
-            />
+            <Form.Group>
+              <Form.Input
+                control={TextArea}
+                width="8"
+                name="genre"
+                value={genre}
+                onChange={handleMovie as any}
+                placeholder="Genre"
+                label="Movie Genre"
+              />
+              <Form.Input
+                control={TextArea}
+                width="8"
+                name="actors"
+                value={actors}
+                onChange={handleMovie as any}
+                placeholder="Actors"
+                label="Movie Actors"
+              />
+            </Form.Group>
 
             <Form.Button content="Post Movie" />
           </Form>
         )}
-        <Image src={poster} wrapped ui={false} />
+        <Image src={poster} wrapped ui={true} />
       </Fragment>
     </div>
   );
