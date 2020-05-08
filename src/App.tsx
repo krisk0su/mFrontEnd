@@ -2,8 +2,8 @@ import React from "react";
 import "./App.css";
 import { Switch, Route, BrowserRouter as Router, Link } from "react-router-dom";
 import { Index } from "./Components/Index";
-import { Movies } from "./Components/Movies";
-import { Create } from "./Components/Create";
+import { Movies } from "./Components/Movies/Movies";
+import { Create } from "./Components/Movies/Create";
 
 function App() {
   return (
