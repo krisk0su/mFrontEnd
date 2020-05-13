@@ -6,6 +6,7 @@ export interface IMovie {
   genre: string[];
   actors: string[];
   poster: string;
+  trailer: string;
   link1: string;
   src: string;
 }

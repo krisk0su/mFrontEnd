@@ -15,6 +15,7 @@ export const Create = () => {
   const [poster, setPoster] = useState();
   const [rating, setRating] = useState();
   const [genre, setGenre] = useState();
+  const [trailer, setTrailer] = useState();
   const [link1, setLink1] = useState();
 
   const apiCall = async () => {
@@ -58,8 +59,12 @@ export const Create = () => {
         break;
       case "actors":
         setActors(value);
+        break;
       case "link1":
         setLink1(value);
+        break;
+      case "trailer":
+        setTrailer(value);
         break;
       default:
         break;
@@ -80,6 +85,7 @@ export const Create = () => {
     setGenre(res.Genre);
   };
   const onSubmit = async () => {
+
     const res = await axios.post("http://localhost:5000/movies/create", {
       title,
       plot,
@@ -88,7 +94,9 @@ export const Create = () => {
       actors,
       poster,
       link1,
+      trailer
     });
+
   };
   return (
     <div>
@@ -171,6 +179,14 @@ export const Create = () => {
                 onChange={handleMovie as any}
                 placeholder="Upload link"
                 label="Upload link"
+              />
+              <Form.Input
+                width="8"
+                name="trailer"
+                value={trailer}
+                onChange={handleMovie as any}
+                placeholder="Trailer"
+                label="Trailer"
               />
             </Form.Group>
 
