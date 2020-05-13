@@ -7,7 +7,7 @@ interface Props {
 }
 export const Movie: React.FC<Props> = ({ Movie }) => {
   return (
-    <Card href="http://www.google.com">
+    <Card href={`/moviebyid/${Movie._id}`}>
       <Image src={Movie.poster} wrapped ui={false} />
       <Card.Content>
         <Card.Description>{Movie.title}</Card.Description>

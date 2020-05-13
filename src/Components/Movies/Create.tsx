@@ -15,6 +15,7 @@ export const Create = () => {
   const [poster, setPoster] = useState();
   const [rating, setRating] = useState();
   const [genre, setGenre] = useState();
+  const [link1, setLink1] = useState();
 
   const apiCall = async () => {
     let link = "http://www.omdbapi.com/?apikey=4c0585a3";
@@ -57,6 +58,8 @@ export const Create = () => {
         break;
       case "actors":
         setActors(value);
+      case "link1":
+        setLink1(value);
         break;
       default:
         break;
@@ -84,6 +87,7 @@ export const Create = () => {
       genre,
       actors,
       poster,
+      link1,
     });
   };
   return (
@@ -157,6 +161,16 @@ export const Create = () => {
                 onChange={handleMovie as any}
                 placeholder="Actors"
                 label="Movie Actors"
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Input
+                width="8"
+                name="link1"
+                value={link1}
+                onChange={handleMovie as any}
+                placeholder="Upload link"
+                label="Upload link"
               />
             </Form.Group>
 

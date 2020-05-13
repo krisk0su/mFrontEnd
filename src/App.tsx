@@ -4,6 +4,7 @@ import { Switch, Route, BrowserRouter as Router, Link } from "react-router-dom";
 import { Index } from "./Components/Index";
 import { Movies } from "./Components/Movies/Movies";
 import { Create } from "./Components/Movies/Create";
+import { MovieById } from "./Components/Movies/MovieById";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="/" exact component={Index}></Route>
             <Route path="/movies" exact component={Movies}></Route>
             <Route path="/create" exact component={Create}></Route>
+            <Route path="/moviebyid/:id" exact component={MovieById}></Route>
           </Switch>
         </div>
       </Router>
