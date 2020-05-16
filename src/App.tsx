@@ -5,8 +5,9 @@ import { Index } from "./Components/Index";
 import { Movies } from "./Components/Movies/Movies";
 import { Create } from "./Components/Movies/Create";
 import { MovieById } from "./Components/Movies/MovieById";
+import { inject, observer } from "mobx-react";
 
-function App() {
+export const App = (props: any) => {
   return (
     <div className="ui container">
       <Router>
@@ -31,6 +32,4 @@ function App() {
       </Router>
     </div>
   );
-}
-
-export default App;
+};

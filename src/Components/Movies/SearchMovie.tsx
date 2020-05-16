@@ -1,21 +1,18 @@
-import React, { Fragment, useState } from "react";
-import {
-  Form,
-  Input,
-  TextArea,
-  Button,
-  Select,
-  Segment,
-} from "semantic-ui-react";
+import React, { useState, useContext } from "react";
+import { Form, Input, Button, Segment } from "semantic-ui-react";
+import { MovieStore, moviesContext } from "../../Store/Store";
 
 export const SearchMovie = (props: any) => {
+  const store: MovieStore = useContext(moviesContext);
   const [val, setVal] = useState();
+
   const onChange = (e: any, { value }: { value: any }) => {
     setVal(value);
   };
   const onSubmit = () => {
-    props.setSearch(val);
-    props.setType("search");
+    store.searchType = "search";
+    store.searchPhrase = val;
+    store.getMoviesBySearch(1);
   };
   return (
     <Segment>

@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { IGenre } from "../Interfaces/IGenre";
-import { Dropdown, Button, Segment } from "semantic-ui-react";
+import { Dropdown, Segment } from "semantic-ui-react";
+import { MovieStore, moviesContext } from "../../Store/Store";
 
 export const Genres = (props: any) => {
+  const store: MovieStore = useContext(moviesContext);
   const [genreOptions, setGenreOptions] = useState([]);
   const fetchGenres = async () => {
     const genresRes = await axios("http://localhost:3000/genres");
@@ -18,8 +20,9 @@ export const Genres = (props: any) => {
     fetchGenres();
   }, []);
   const onGenreSelect = (e: any, value: any) => {
-    props.setGenre(value.value);
-    props.setType("genre");
+    store.searchType = "genre";
+    store.genre = value.value;
+    store.getMoviesByGenre(1);
   };
 
   return (
