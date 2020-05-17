@@ -11,6 +11,7 @@ import { IMovie } from "../Interfaces/IMovie";
 
 export const Movies = observer((props: any) => {
   const store: MovieStore = useContext(moviesContext);
+  console.log("type", store.searchType);
   const initMovies = async () => {
     //initilizing the movies for first time
     await store.initMovies();
@@ -23,6 +24,9 @@ export const Movies = observer((props: any) => {
     <div>
       <SearchMovie />
       <Genres />
+      {store.searchType === "search" && (
+        <h1>Results found for {store.searchPhrase}</h1>
+      )}
       <Segment>
         <Card.Group itemsPerRow={5}>
           {store.Movies.map((mov: IMovie) => (

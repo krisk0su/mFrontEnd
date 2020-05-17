@@ -22,6 +22,7 @@ export const Genres = (props: any) => {
   const onGenreSelect = (e: any, value: any) => {
     store.searchType = "genre";
     store.genre = value.value;
+    store.searchPhrase = "";
     store.getMoviesByGenre(1);
   };
 

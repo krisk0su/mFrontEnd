@@ -4,7 +4,7 @@ import { MovieStore, moviesContext } from "../../Store/Store";
 
 export const SearchMovie = (props: any) => {
   const store: MovieStore = useContext(moviesContext);
-  const [val, setVal] = useState();
+  const [val, setVal] = useState("");
 
   const onChange = (e: any, { value }: { value: any }) => {
     setVal(value);
@@ -12,6 +12,7 @@ export const SearchMovie = (props: any) => {
   const onSubmit = () => {
     store.searchType = "search";
     store.searchPhrase = val;
+    setVal("");
     store.getMoviesBySearch(1);
   };
   return (
@@ -23,6 +24,7 @@ export const SearchMovie = (props: any) => {
             control={Input}
             label="Search movie"
             placeholder="Search movie"
+            value={val}
             onChange={onChange as any}
           />
           <Form.Field
