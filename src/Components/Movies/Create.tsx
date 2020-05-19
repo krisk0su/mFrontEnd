@@ -1,5 +1,6 @@
 import React, { useState, Fragment } from "react";
 import { Form, Image, TextArea } from "semantic-ui-react";
+import { stringToArr } from "../../lib/universal";
 const axios = require("axios");
 
 //4c0585a3 key
@@ -10,11 +11,11 @@ export const CreateMovie = () => {
   //movie
   const [title, setTitle] = useState();
   const [movieYear, setMovieYear] = useState();
-  const [actors, setActors] = useState();
+  const [actors, setActors] = useState([]);
+  const [genre, setGenre] = useState([]);
   const [plot, setPlot] = useState();
   const [poster, setPoster] = useState();
   const [rating, setRating] = useState();
-  const [genre, setGenre] = useState();
   const [trailer, setTrailer] = useState();
   const [link1, setLink1] = useState();
 
@@ -66,6 +67,9 @@ export const CreateMovie = () => {
       case "trailer":
         setTrailer(value);
         break;
+      case "rating":
+        setRating(value);
+        break;
       default:
         break;
     }
@@ -78,11 +82,11 @@ export const CreateMovie = () => {
     const res = await apiCall();
     setTitle(res.Title);
     setMovieYear(res.Year);
-    setActors(res.Actors);
+    setActors(stringToArr(res.Actors));
+    setGenre(stringToArr(res.Genre));
     setPlot(res.Plot);
     setPoster(res.Poster);
     setRating(res.imdbRating);
-    setGenre(res.Genre);
   };
   const onSubmit = async () => {
     const res = await axios.post("http://localhost:5000/movies/create", {
@@ -94,6 +98,7 @@ export const CreateMovie = () => {
       poster,
       link1,
       trailer,
+      rating,
     });
   };
   return (
@@ -185,6 +190,14 @@ export const CreateMovie = () => {
                 onChange={handleMovie as any}
                 placeholder="Trailer"
                 label="Trailer"
+              />
+              <Form.Input
+                width="8"
+                name="rating"
+                value={rating}
+                onChange={handleMovie as any}
+                placeholder="Movie Rating"
+                label="Movie Rating"
               />
             </Form.Group>
 

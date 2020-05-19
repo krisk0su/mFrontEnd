@@ -8,7 +8,7 @@ const axios = require("axios");
 export const CreateSerie = () => {
   const [name, setName] = useState();
   const [year, setYear] = useState();
-  //movie
+  //serie
   const [title, setTitle] = useState();
   const [movieYear, setMovieYear] = useState();
   const [actors, setActors] = useState();
@@ -16,8 +16,8 @@ export const CreateSerie = () => {
   const [poster, setPoster] = useState();
   const [rating, setRating] = useState();
   const [genre, setGenre] = useState();
-  const [trailer, setTrailer] = useState();
-  const [link1, setLink1] = useState();
+  const [seasons, setSeasons] = useState();
+
   const history = useHistory();
   const apiCall = async () => {
     let link = "http://www.omdbapi.com/?apikey=4c0585a3";
@@ -60,11 +60,11 @@ export const CreateSerie = () => {
       case "actors":
         setActors(value);
         break;
-      case "link1":
-        setLink1(value);
+      case "rating":
+        setRating(value);
         break;
-      case "trailer":
-        setTrailer(value);
+      case "seasons":
+        setSeasons(value);
         break;
       default:
         break;
@@ -85,6 +85,7 @@ export const CreateSerie = () => {
     setPoster(res.Poster);
     setRating(res.imdbRating);
     setGenre(res.Genre);
+    setSeasons(res.totalSeasons);
   };
   const onSubmit = async () => {
     const res = await axios.post("http://localhost:5000/series/create", {
@@ -94,8 +95,7 @@ export const CreateSerie = () => {
       genre,
       actors,
       poster,
-      link1,
-      trailer,
+      seasons,
     });
 
     const id = res.data._id;
@@ -134,16 +134,16 @@ export const CreateSerie = () => {
                 name="title"
                 value={title}
                 onChange={handleMovie as any}
-                placeholder="Movie Name"
-                label="Movie Name"
+                placeholder="Serie Name"
+                label="Serie Name"
               />
               <Form.Input
                 width="6"
                 name="year"
                 value={movieYear}
                 onChange={handleMovie as any}
-                placeholder="Movie Year"
-                label="Movie Year"
+                placeholder="Serie Year"
+                label="Serie Year"
               />
             </Form.Group>
 
@@ -153,7 +153,7 @@ export const CreateSerie = () => {
               name="plot"
               value={plot}
               onChange={handleMovie as any}
-              label="Movie Plot"
+              label="Serie Plot"
             />
             <Form.Group>
               <Form.Input
@@ -163,7 +163,7 @@ export const CreateSerie = () => {
                 value={genre}
                 onChange={handleMovie as any}
                 placeholder="Genre"
-                label="Movie Genre"
+                label="Serie Genre"
               />
               <Form.Input
                 control={TextArea}
@@ -172,29 +172,29 @@ export const CreateSerie = () => {
                 value={actors}
                 onChange={handleMovie as any}
                 placeholder="Actors"
-                label="Movie Actors"
+                label="Serie Actors"
               />
             </Form.Group>
             <Form.Group>
               <Form.Input
                 width="8"
-                name="link1"
-                value={link1}
+                name="rating"
+                value={rating}
                 onChange={handleMovie as any}
-                placeholder="Upload link"
-                label="Upload link"
+                placeholder="Serie Rating"
+                label="Serie Rating"
               />
               <Form.Input
                 width="8"
-                name="trailer"
-                value={trailer}
+                name="seasons"
+                value={seasons}
                 onChange={handleMovie as any}
-                placeholder="Trailer"
-                label="Trailer"
+                placeholder="Serie Seasons"
+                label="Serie Seasons"
               />
             </Form.Group>
 
-            <Form.Button content="Post Movie" />
+            <Form.Button content="Post Serie" />
           </Form>
         )}
         <Image src={poster} wrapped ui={true} />
