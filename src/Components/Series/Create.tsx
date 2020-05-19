@@ -1,6 +1,8 @@
 import React, { useState, Fragment } from "react";
 import { Form, Image, TextArea } from "semantic-ui-react";
 import { Redirect } from "react-router-dom";
+import { ISerie } from "../Interfaces/ISerie";
+import { useHistory } from "react-router-dom";
 const axios = require("axios");
 
 export const CreateSerie = () => {
@@ -16,7 +18,7 @@ export const CreateSerie = () => {
   const [genre, setGenre] = useState();
   const [trailer, setTrailer] = useState();
   const [link1, setLink1] = useState();
-
+  const history = useHistory();
   const apiCall = async () => {
     let link = "http://www.omdbapi.com/?apikey=4c0585a3";
     if (name) link += `&t=${name}`;
@@ -95,8 +97,10 @@ export const CreateSerie = () => {
       link1,
       trailer,
     });
-    console.log("res", res);
-    // return <Redirect to={`/series/${r}`} />
+
+    const id = res.data._id;
+    console.log("id", id);
+    history.push(`/series/${id}`);
   };
   return (
     <div>

@@ -7,6 +7,7 @@ import { CreateMovie } from "./Components/Movies/Create";
 import { MovieById } from "./Components/Movies/MovieById";
 import { CreateSerie } from "./Components/Series/Create";
 import { inject, observer } from "mobx-react";
+import { SerieByid } from "./Components/Series/SerieById";
 
 export const App = (props: any) => {
   return (
@@ -26,9 +27,10 @@ export const App = (props: any) => {
           <Switch>
             <Route path="/" exact component={Index}></Route>
             <Route path="/movies" exact component={Movies}></Route>
-            <Route path="/createmovie" exact component={CreateMovie}></Route>
+            <Route path="/movies/create" exact component={CreateMovie}></Route>
             <Route path="/moviebyid/:id" exact component={MovieById}></Route>
-            <Route path="/createserie" exact component={CreateSerie}></Route>
+            <Route path="/series/create" exact component={CreateSerie}></Route>
+            <Route path="/series/:id" exact component={SerieByid}></Route>
           </Switch>
         </div>
       </Router>
