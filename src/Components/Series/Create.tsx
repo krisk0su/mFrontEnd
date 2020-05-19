@@ -1,10 +1,9 @@
 import React, { useState, Fragment } from "react";
 import { Form, Image, TextArea } from "semantic-ui-react";
+import { Redirect } from "react-router-dom";
 const axios = require("axios");
 
-//4c0585a3 key
-//http://img.omdbapi.com/?apikey=[4c0585a3]&
-export const CreateMovie = () => {
+export const CreateSerie = () => {
   const [name, setName] = useState();
   const [year, setYear] = useState();
   //movie
@@ -24,7 +23,6 @@ export const CreateMovie = () => {
     if (year) link += `&y=${year}`;
     link += "&plot=full";
     const res = await axios.get(link);
-    console.log("res", res);
     return res.data;
   };
   const handleName = (
@@ -76,8 +74,10 @@ export const CreateMovie = () => {
   //http://www.omdbapi.com/?t=thor&y=2013&plot=full
   const onGetDetails = async () => {
     const res = await apiCall();
+    var reg = new RegExp("^[0-9]+");
+    const year = res.Year.match(reg);
     setTitle(res.Title);
-    setMovieYear(res.Year);
+    setMovieYear(year);
     setActors(res.Actors);
     setPlot(res.Plot);
     setPoster(res.Poster);
@@ -85,7 +85,7 @@ export const CreateMovie = () => {
     setGenre(res.Genre);
   };
   const onSubmit = async () => {
-    const res = await axios.post("http://localhost:5000/movies/create", {
+    const res = await axios.post("http://localhost:5000/series/create", {
       title,
       plot,
       year: movieYear,
@@ -95,6 +95,8 @@ export const CreateMovie = () => {
       link1,
       trailer,
     });
+    console.log("res", res);
+    // return <Redirect to={`/series/${r}`} />
   };
   return (
     <div>
@@ -106,7 +108,7 @@ export const CreateMovie = () => {
             name="name"
             value={name}
             onChange={handleName as any}
-            label="Movie Name"
+            label="Serie Name"
           />
           <Form.Input
             width="6"
@@ -114,7 +116,7 @@ export const CreateMovie = () => {
             name="year"
             value={year}
             onChange={handleYear as any}
-            label="Movie Year"
+            label="Serie Year"
           />
         </Form.Group>
         <Form.Button content="Get Movie Details" />

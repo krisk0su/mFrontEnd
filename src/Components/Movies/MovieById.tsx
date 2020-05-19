@@ -10,7 +10,6 @@ export const MovieById = (props: any) => {
     const movieRes = await axios(`http://localhost:3000/movies/${id}`);
 
     setMovie(movieRes.data);
-    console.log("dasdsad", movieRes.data);
   };
   useEffect(() => {
     fetchData();
