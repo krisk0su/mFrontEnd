@@ -3,6 +3,7 @@ import { Form, Image, TextArea } from "semantic-ui-react";
 import { Redirect } from "react-router-dom";
 import { ISerie } from "../Interfaces/ISerie";
 import { useHistory } from "react-router-dom";
+import { ISerieRequest } from "../Request/ISerieRequest";
 const axios = require("axios");
 
 export const CreateSerie = () => {
@@ -10,13 +11,13 @@ export const CreateSerie = () => {
   const [year, setYear] = useState();
   //serie
   const [title, setTitle] = useState();
-  const [movieYear, setMovieYear] = useState();
+  const [movieYear, setMovieYear] = useState<number>();
   const [actors, setActors] = useState();
   const [plot, setPlot] = useState();
   const [poster, setPoster] = useState();
-  const [rating, setRating] = useState();
+  const [rating, setRating] = useState<number>();
   const [genre, setGenre] = useState();
-  const [seasons, setSeasons] = useState();
+  const [seasons, setSeasons] = useState<number>();
 
   const history = useHistory();
   const apiCall = async () => {
@@ -70,33 +71,35 @@ export const CreateSerie = () => {
         break;
     }
   };
-  // const handleMovieYear = (e, { name, value }) => {
-  //   set(value);
-  // };
-  //http://www.omdbapi.com/?t=thor&y=2013&plot=full
+
   const onGetDetails = async () => {
     const res = await apiCall();
+
     var reg = new RegExp("^[0-9]+");
-    const year = res.Year.match(reg);
+    const year = +res.Year.match(reg)[0];
+
     setTitle(res.Title);
     setMovieYear(year);
     setActors(res.Actors);
     setPlot(res.Plot);
     setPoster(res.Poster);
-    setRating(res.imdbRating);
+    setRating(+res.imdbRating);
     setGenre(res.Genre);
-    setSeasons(res.totalSeasons);
+    setSeasons(+res.totalSeasons);
   };
   const onSubmit = async () => {
-    const res = await axios.post("http://localhost:5000/series/create", {
+    const serie: ISerieRequest = {
       title,
       plot,
       year: movieYear,
       genre,
       actors,
-      poster,
+      rating,
       seasons,
-    });
+      poster,
+    };
+    console.log("serie", serie);
+    const res = await axios.post("http://localhost:5000/series/create", serie);
 
     const id = res.data._id;
     console.log("id", id);
@@ -104,6 +107,7 @@ export const CreateSerie = () => {
   };
   return (
     <div>
+      <h1>SERIES</h1>
       <Form onSubmit={onGetDetails}>
         <Form.Group>
           <Form.Input

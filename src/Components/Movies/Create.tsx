@@ -80,10 +80,11 @@ export const CreateMovie = () => {
   //http://www.omdbapi.com/?t=thor&y=2013&plot=full
   const onGetDetails = async () => {
     const res = await apiCall();
+    console.log("res", res);
     setTitle(res.Title);
     setMovieYear(res.Year);
-    setActors(stringToArr(res.Actors));
-    setGenre(stringToArr(res.Genre));
+    setActors(res.Actors);
+    setGenre(res.Genre);
     setPlot(res.Plot);
     setPoster(res.Poster);
     setRating(res.imdbRating);
