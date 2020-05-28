@@ -1,12 +1,15 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, useContext } from "react";
 import { Form, Image, TextArea } from "semantic-ui-react";
 import { Redirect } from "react-router-dom";
 import { ISerie } from "../Interfaces/ISerie";
 import { useHistory } from "react-router-dom";
 import { ISerieRequest } from "../Request/ISerieRequest";
+import { observer } from "mobx-react";
+import { SeriesStore, seriesContext } from "../../Store/SeriesStore";
 const axios = require("axios");
 
-export const CreateSerie = () => {
+export const CreateSerie = observer(() => {
+  const seriesStore: SeriesStore = useContext(seriesContext);
   const [name, setName] = useState();
   const [year, setYear] = useState();
   //serie
@@ -98,12 +101,12 @@ export const CreateSerie = () => {
       seasons,
       poster,
     };
-    console.log("serie", serie);
-    const res = await axios.post("http://localhost:5000/series/create", serie);
-
-    const id = res.data._id;
-    console.log("id", id);
-    history.push(`/series/${id}`);
+    await seriesStore.postSerie(serie);
+    // const res = await axios.post("http://localhost:5000/series/create", serie);
+    // console.log("res zzz", res.data);
+    // await seriesStore.setSerie(res.data);
+    // const id = res.data._id;
+    // history.push(`/series/${id}`);
   };
   return (
     <div>
@@ -205,4 +208,4 @@ export const CreateSerie = () => {
       </Fragment>
     </div>
   );
-};
+});

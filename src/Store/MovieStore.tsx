@@ -3,21 +3,7 @@ import { observable, action } from "mobx";
 import { IMovie } from "../Components/Interfaces/IMovie";
 import axios from "axios";
 
-export interface MovieStore {
-  searchType: string;
-  searchPhrase: string;
-  genre: string;
-  currentPage: number;
-  Movies: IMovie[];
-  totalPages: number;
-
-  updateCurrentPage(currentPage: number): any;
-  getMovies(currentPage: number): any;
-  initMovies(): any;
-  getMoviesBySearch(currentPage: number): any;
-  getMoviesByGenre(currentPage: number): any;
-}
-class Store implements MovieStore {
+export class MovieStore {
   @observable searchType: string = "normal";
   @observable searchPhrase: string;
   @observable currentPage = 1;
@@ -78,4 +64,4 @@ class Store implements MovieStore {
   }
 }
 
-export const moviesContext = createContext(new Store());
+export const moviesContext = createContext(new MovieStore());

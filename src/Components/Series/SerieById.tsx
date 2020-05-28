@@ -1,21 +1,13 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect, useContext } from "react";
 import { Embed, Image, Grid, Header } from "semantic-ui-react";
 import { ISerie } from "../Interfaces/ISerie";
-
 import axios from "axios";
-
-export const SerieByid = (props: any) => {
-  const [serie, setSerie] = useState<ISerie>();
-  const { id } = props.match.params;
-  const fetchData = async () => {
-    const movieRes = await axios(`http://localhost:3000/series/${id}`);
-
-    setSerie(movieRes.data);
-  };
-  useEffect(() => {
-    fetchData();
-  }, []);
-
+import { observer } from "mobx-react";
+import { SeriesStore, seriesContext } from "../../Store/SeriesStore";
+import { Seasons } from "./Seasons";
+export const SerieByid = observer((props: any) => {
+  const seriesStore: SeriesStore = useContext(seriesContext);
+  const serie = seriesStore.selectedSerie;
   return (
     <Fragment>
       <Grid celled>
@@ -30,7 +22,8 @@ export const SerieByid = (props: any) => {
             <Header as="h5">{serie && serie.genre}</Header>
           </Grid.Column>
         </Grid.Row>
+        <Seasons />
       </Grid>
     </Fragment>
   );
-};
+});

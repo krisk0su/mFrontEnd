@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Form, Input, Button, Segment } from "semantic-ui-react";
-import { MovieStore, moviesContext } from "../../Store/Store";
+import { MovieStore, moviesContext } from "../../Store/MovieStore";
 
 export const SearchMovie = (props: any) => {
   const store: MovieStore = useContext(moviesContext);

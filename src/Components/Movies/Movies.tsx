@@ -4,7 +4,7 @@ import { Movie } from "./Movie";
 import { Genres } from "./Genres";
 import { SearchMovie } from "./SearchMovie";
 import { MPagination } from "./MPagination";
-import { MovieStore, moviesContext } from "../../Store/Store";
+import { MovieStore, moviesContext } from "../../Store/MovieStore";
 import { Card, Segment } from "semantic-ui-react";
 import { inject, observer } from "mobx-react";
 import { IMovie } from "../Interfaces/IMovie";

@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { IGenre } from "../Interfaces/IGenre";
 import { Dropdown, Segment } from "semantic-ui-react";
-import { MovieStore, moviesContext } from "../../Store/Store";
+import { MovieStore, moviesContext } from "../../Store/MovieStore";
 
 export const Genres = (props: any) => {
   const store: MovieStore = useContext(moviesContext);

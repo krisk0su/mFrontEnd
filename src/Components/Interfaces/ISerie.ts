@@ -6,4 +6,6 @@ export interface ISerie {
   genre: string[];
   actors: string[];
   poster: string;
+  seasons: string[];
+  rating: number;
 }
