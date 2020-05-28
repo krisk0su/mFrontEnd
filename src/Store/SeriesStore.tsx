@@ -9,12 +9,13 @@ export class SeriesStore {
 
   @action async getSerie(id: string) {
     const res = await axios.get(`http://localhost:5000/series/${id}`);
-    console.log("res", res);
+    this.selectedSerie = res.data;
   }
   @action async postSerie(serie: ISerieRequest) {
     const res = await axios.post("http://localhost:5000/series/create", serie);
     const { _id } = res.data as ISerie;
-    this.getSerie(_id);
+    await this.getSerie(_id);
+    return this.selectedSerie._id;
   }
 }
 

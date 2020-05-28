@@ -101,12 +101,9 @@ export const CreateSerie = observer(() => {
       seasons,
       poster,
     };
-    await seriesStore.postSerie(serie);
-    // const res = await axios.post("http://localhost:5000/series/create", serie);
-    // console.log("res zzz", res.data);
-    // await seriesStore.setSerie(res.data);
-    // const id = res.data._id;
-    // history.push(`/series/${id}`);
+    const id = await seriesStore.postSerie(serie);
+
+    history.push(`/series/${id}`);
   };
   return (
     <div>
