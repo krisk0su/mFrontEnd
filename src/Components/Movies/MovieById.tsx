@@ -1,15 +1,14 @@
-import React, { useEffect, useState, Fragment } from "react";
-import axios from "axios";
+import React, { useEffect, useState, Fragment, useContext } from "react";
 import { IMovie } from "../Interfaces/IMovie";
 import { Embed, Image, Grid, Header } from "semantic-ui-react";
+import { MovieStore, moviesContext } from "../../Store/MovieStore";
 
 export const MovieById = (props: any) => {
   const [movie, setMovie] = useState<IMovie>();
   const { id } = props.match.params;
+  const store: MovieStore = useContext(moviesContext);
   const fetchData = async () => {
-    const movieRes = await axios(`http://localhost:3000/movies/${id}`);
-
-    setMovie(movieRes.data);
+    setMovie(await store.getMovieById(id));
   };
   useEffect(() => {
     fetchData();

@@ -10,6 +10,7 @@ export class MovieStore {
   @observable Movies: IMovie[] = [];
   @observable totalPages: number = 10;
   @observable genre: string;
+  @observable movie: IMovie;
 
   @action updateCurrentPage(currentPage: number) {
     this.currentPage = currentPage;
@@ -61,6 +62,11 @@ export class MovieStore {
     });
     this.totalPages = res.data.totalPages;
     this.Movies = res.data.movies;
+  }
+  @action async getMovieById(id: string) {
+    const movie = await axios(`http://localhost:3000/movies/${id}`);
+    this.movie = movie.data;
+    return movie.data;
   }
 }
 

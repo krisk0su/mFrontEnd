@@ -5,7 +5,6 @@ import { SeriesStore, seriesContext } from "../../Store/SeriesStore";
 
 export const Season = observer((props: any) => {
   const season = props.season;
-  console.log("season", season);
   return (
     <Grid.Column width={3}>
       <Image

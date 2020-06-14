@@ -1,13 +1,23 @@
 import React, { Fragment, useState, useEffect, useContext } from "react";
-import { Embed, Image, Grid, Header } from "semantic-ui-react";
-import { ISerie } from "../Interfaces/ISerie";
-import axios from "axios";
+import { Image, Grid, Header } from "semantic-ui-react";
 import { observer } from "mobx-react";
 import { SeriesStore, seriesContext } from "../../Store/SeriesStore";
 import { Seasons } from "./Seasons";
+import { ISerie } from "../Interfaces/ISerie";
+
 export const SerieByid = observer((props: any) => {
-  const seriesStore: SeriesStore = useContext(seriesContext);
-  const serie = seriesStore.selectedSerie;
+  const [serie, setSerie] = useState<ISerie>();
+  const { id } = props.match.params;
+  const store: SeriesStore = useContext(seriesContext);
+  const fetchData = async () => {
+    const ser = await store.getSerie(id);
+    setSerie(ser);
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  console.log("serie", serie);
   return (
     <Fragment>
       <Grid celled>

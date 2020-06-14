@@ -8,6 +8,7 @@ import { MovieById } from "./Components/Movies/MovieById";
 import { CreateSerie } from "./Components/Series/Create";
 import { inject, observer } from "mobx-react";
 import { SerieByid } from "./Components/Series/SerieById";
+import { Series } from "./Components/Series/Series";
 
 export const App = (props: any) => {
   return (
@@ -21,16 +22,14 @@ export const App = (props: any) => {
               </li>
             </ul>
           </nav>
-
-          {/* A <Switch> looks through its children <Route>s and
-        renders the first one that matches the current URL. */}
           <Switch>
             <Route path="/" exact component={Index}></Route>
             <Route path="/movies" exact component={Movies}></Route>
             <Route path="/movies/create" exact component={CreateMovie}></Route>
             <Route path="/moviebyid/:id" exact component={MovieById}></Route>
+            <Route path="/series" exact component={Series}></Route>
             <Route path="/series/create" exact component={CreateSerie}></Route>
-            <Route path="/series/:id" exact component={SerieByid}></Route>
+            <Route path="/seriebyid/:id" exact component={SerieByid}></Route>
           </Switch>
         </div>
       </Router>
