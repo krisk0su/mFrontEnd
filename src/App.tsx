@@ -8,22 +8,27 @@ import { CreateSerie } from "./Components/Series/Create";
 import { SerieByid } from "./Components/Series/SerieById";
 import { Series } from "./Components/Series/Series";
 import { SeasonById } from "./Components/Series/SeasonById";
+import { MockupIndex } from "./Components/mockups/mockup-index";
 import { inject, observer } from "mobx-react";
 
 import "./App.css";
 
 export const App = (props: any) => {
   return (
-    <div className="ui container">
+    // <div className="ui container">
+    <div>
       <Router>
         <div>
-          <nav>
+          {/* <nav>
             <ul>
               <li>
                 <Link to="/">Home</Link>
               </li>
+              <li>
+                <Link to="/mockups">mockups</Link>
+              </li>
             </ul>
-          </nav>
+          </nav> */}
           <Switch>
             <Route path="/" exact component={Index}></Route>
             <Route path="/movies" exact component={Movies}></Route>
@@ -33,6 +38,7 @@ export const App = (props: any) => {
             <Route path="/series/create" exact component={CreateSerie}></Route>
             <Route path="/seriebyid/:id" exact component={SerieByid}></Route>
             <Route path="/seasonById/:id" exact component={SeasonById}></Route>
+            <Route path="/mockups" exact component={MockupIndex}></Route>
           </Switch>
         </div>
       </Router>
