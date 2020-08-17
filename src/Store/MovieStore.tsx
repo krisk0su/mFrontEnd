@@ -31,7 +31,7 @@ export class MovieStore {
   }
   //initilizing movies for first time by accessing /movies
   @action async initMovies() {
-    const res = await axios.post("http://localhost:3000/movies/all", {
+    const res = await axios.post("http://localhost:5000/movies/all", {
       currentPage: 1,
     });
 
@@ -39,7 +39,7 @@ export class MovieStore {
     this.Movies = res.data.movies;
   }
   @action async getMovies(currentPage: number) {
-    const res = await axios.post("http://localhost:3000/movies/all", {
+    const res = await axios.post("http://localhost:5000/movies/all", {
       currentPage,
     });
 
@@ -48,7 +48,7 @@ export class MovieStore {
   }
 
   @action async getMoviesBySearch(currentPage: number) {
-    const res = await axios.post("http://localhost:3000/movies/search", {
+    const res = await axios.post("http://localhost:5000/movies/search", {
       currentPage,
       searchPhrase: this.searchPhrase,
     });
@@ -56,7 +56,7 @@ export class MovieStore {
     this.Movies = res.data.movies;
   }
   @action async getMoviesByGenre(currentPage: number) {
-    const res = await axios.post("http://localhost:3000/movies/genre", {
+    const res = await axios.post("http://localhost:5000/movies/genre", {
       currentPage,
       genre: this.genre,
     });
@@ -64,7 +64,7 @@ export class MovieStore {
     this.Movies = res.data.movies;
   }
   @action async getMovieById(id: string) {
-    const movie = await axios(`http://localhost:3000/movies/${id}`);
+    const movie = await axios(`http://localhost:5000/movies/${id}`);
     this.movie = movie.data;
     return movie.data;
   }
