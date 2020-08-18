@@ -21,17 +21,23 @@ export class SeriesStore {
   }
   @action async getSeries() {
     const res = await axios.get(`http://localhost:5000/series/all`);
-    console.log("res", res);
   }
   @action async getSeasonByid(id: string) {
     const res = await axios.get(`http://localhost:5000/series/season/${id}`);
-    console.log("res", res);
+    return res.data;
   }
   @action async getSerie(id: string) {
     const serie = await axios.get(`http://localhost:5000/series/${id}`);
     this.selectedSerie = serie.data;
     console.log("serie", serie);
     return this.selectedSerie;
+  }
+  @action async postEpisode(episode: any) {
+    const serie = await axios.post(
+      `http://localhost:5000/series/episode`,
+      episode
+    );
+    return true;
   }
   @action async postSerie(serie: ISerieRequest) {
     const res = await axios.post("http://localhost:5000/series/create", serie);

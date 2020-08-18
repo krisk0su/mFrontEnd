@@ -7,7 +7,7 @@ import { MovieById } from "./Components/Movies/MovieById";
 import { CreateSerie } from "./Components/Series/Create";
 import { SerieByid } from "./Components/Series/SerieById";
 import { Series } from "./Components/Series/Series";
-import { SeasonById } from "./Components/Series/SeasonById";
+import { SeasonById } from "./Components/Series/Seasons/SeasonById";
 import { inject, observer } from "mobx-react";
 
 import "./App.css";
