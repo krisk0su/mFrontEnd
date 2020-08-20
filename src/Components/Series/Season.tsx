@@ -1,7 +1,7 @@
 import React, { useContext, Fragment } from "react";
 import { observer } from "mobx-react";
 import { Image, Card } from "semantic-ui-react";
-import { SeriesStore, seriesContext } from "../../../Store/SeriesStore";
+import { SeriesStore, seriesContext } from "../../Store/SeriesStore";
 
 export const Season = observer((props: any) => {
   const season = props.season;

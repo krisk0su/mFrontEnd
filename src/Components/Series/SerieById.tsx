@@ -2,7 +2,7 @@ import React, { Fragment, useState, useEffect, useContext } from "react";
 import { Image, Grid, Header } from "semantic-ui-react";
 import { observer } from "mobx-react";
 import { SeriesStore, seriesContext } from "../../Store/SeriesStore";
-import { Seasons } from "./Seasons/Seasons";
+import { Seasons } from "./Seasons";
 import { ISerie } from "../Interfaces/ISerie";
 
 export const SerieByid = observer((props: any) => {
