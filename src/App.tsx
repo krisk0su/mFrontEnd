@@ -11,6 +11,7 @@ import { SeasonById } from "./Components/Series/Seasons/SeasonById";
 import { inject, observer } from "mobx-react";
 
 import "./App.css";
+import { EpisodeById } from "./Components/Series/Episodes/EpisodeById";
 
 export const App = (props: any) => {
   return (
@@ -33,6 +34,11 @@ export const App = (props: any) => {
             <Route path="/series/create" exact component={CreateSerie}></Route>
             <Route path="/seriebyid/:id" exact component={SerieByid}></Route>
             <Route path="/seasonById/:id" exact component={SeasonById}></Route>
+            <Route
+              path="/episodeById/:id"
+              exact
+              component={EpisodeById}
+            ></Route>
           </Switch>
         </div>
       </Router>

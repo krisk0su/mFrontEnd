@@ -1,12 +1,21 @@
 import React, { useContext, Fragment, useEffect, useState } from "react";
 import { observer } from "mobx-react";
-import { Embed, Image, Grid, Header, Button } from "semantic-ui-react";
+import {
+  Embed,
+  Image,
+  Grid,
+  Header,
+  Button,
+  Segment,
+  Card,
+} from "semantic-ui-react";
 import { SeriesStore, seriesContext } from "../../../Store/SeriesStore";
 import { CreateEpisode } from "../Episodes/CreateEpisode";
+import { Episode } from "../Episodes/Episode";
 
 export const SeasonById = observer((props: any) => {
   const { id } = props.match.params;
-  const [season, setSeason] = useState();
+  const [season, setSeason] = useState<any>();
   const seriesStore: SeriesStore = useContext(seriesContext);
 
   const init = async () => {
@@ -18,11 +27,18 @@ export const SeasonById = observer((props: any) => {
     init();
   }, []);
 
-  console.log("season", season);
+  const displayEpisodes = () => {
+    return season?.episodes?.map((episode: any) => {
+      return <Episode episode={episode} />;
+    });
+  };
+  console.log("season2", season);
   return (
     <div>
       <CreateEpisode seasonId={id} />
-      season by id
+      <Segment>
+        <Card.Group itemsPerRow={3}>{displayEpisodes()}</Card.Group>
+      </Segment>
     </div>
   );
 });
