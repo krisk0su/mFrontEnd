@@ -1,9 +1,9 @@
 import React, { useContext, Fragment } from "react";
 import { observer } from "mobx-react";
 import { Grid, Button, Segment, Card } from "semantic-ui-react";
-import { SeriesStore, seriesContext } from "../../Store/SeriesStore";
+import { SeriesStore, seriesContext } from "../../../Store/SeriesStore";
 import { Season } from "./Season";
-import { ISerie } from "../Interfaces/ISerie";
+import { ISerie } from "../../Interfaces/ISerie";
 
 export const Seasons = observer((props: any) => {
   const seriesStore: SeriesStore = useContext(seriesContext);
