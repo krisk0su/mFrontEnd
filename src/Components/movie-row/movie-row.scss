@@ -2,8 +2,9 @@
 
 .movie-row {
   @include centered-flex;
-  background-image: url("../../static/imgs/test.jpg");
-  background-size: contain;
+  border-bottom: 0.3em solid black;
+  background-size: cover;
+  background-repeat: no-repeat;
   flex-direction: column;
   .title {
     @include centered-flex;
@@ -33,6 +34,18 @@
   }
   .movies {
     @include centered-flex;
-   
   }
+}
+.trending {
+  background-image: url("../../static/imgs/couple-background.jpg");
+}
+.recent {
+  background-image: url("../../static/imgs/sci-fiction-background.jpg");
+}
+.documentaries {
+  background-image: url("../../static/imgs/test-1.jpg");
+}
+.comedies {
+  background-image: url("../../static/imgs/test-2.jpg");
+
 }
