@@ -7,7 +7,11 @@ export const SearchSection = () => {
       <ul>
         <li>
           <label htmlFor="">
-            <input placeholder="Search movie..." type="text" className="search-movie" />
+            <input
+              placeholder="Search movie..."
+              type="text"
+              className="search-movie"
+            />
             <i className="fas fa-search"></i>
           </label>
         </li>

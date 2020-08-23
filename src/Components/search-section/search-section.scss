@@ -2,13 +2,14 @@
 
 .search-section {
   @include centered-flex;
-  justify-content: start;
+  justify-content: end;
   height: 5em;
   width: 100%;
   background: rgba(0, 0, 0, 0.4);
   border-top: 0.2em solid black !important;
   border-bottom: 0.2em solid black;
-  position: relative;
+  position: absolute;
+  bottom: 0;
   z-index: 3;
   ul {
     @include centered-flex;

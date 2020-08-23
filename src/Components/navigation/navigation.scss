@@ -2,7 +2,10 @@
 
 .navigation {
   @include centered-flex;
-  position: relative;
+  overflow: hidden;
+  position: fixed;
+  width: 100vw;
+  top: 0;
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.5);
   li {
