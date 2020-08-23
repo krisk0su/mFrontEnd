@@ -7,53 +7,34 @@ import { MovieById } from "./Components/Movies/MovieById";
 import { CreateSerie } from "./Components/Series/Create";
 import { SerieByid } from "./Components/Series/SerieById";
 import { Series } from "./Components/Series/Series";
-<<<<<<< HEAD
-import { SeasonById } from "./Components/Series/SeasonById";
-import { MockupIndex } from "./Components/mockups/mockup-index";
-=======
 import { SeasonById } from "./Components/Series/Seasons/SeasonById";
->>>>>>> 478601430b4d2c2a8eaf9eab77b4a08ce75c8c1f
-import { inject, observer } from "mobx-react";
-
-import "./App.css";
 import { EpisodeById } from "./Components/Series/Episodes/EpisodeById";
+import { Navigation } from "./Components/navigation/navigation";
+import { Header } from "./Components/header/header";
+import { MainPage } from "./Components/main-page/main-page";
+import "./assets/main.scss";
+import { SearchSection } from "./Components/search-section/search-section";
 
 export const App = (props: any) => {
   return (
-    // <div className="ui container">
-    <div>
+    <div className="site-wrapper">
       <Router>
-        <div>
-          {/* <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/mockups">mockups</Link>
-              </li>
-            </ul>
-          </nav> */}
-          <Switch>
-            <Route path="/" exact component={Index}></Route>
-            <Route path="/movies" exact component={Movies}></Route>
-            <Route path="/movies/create" exact component={CreateMovie}></Route>
-            <Route path="/moviebyid/:id" exact component={MovieById}></Route>
-            <Route path="/series" exact component={Series}></Route>
-            <Route path="/series/create" exact component={CreateSerie}></Route>
-            <Route path="/seriebyid/:id" exact component={SerieByid}></Route>
-            <Route path="/seasonById/:id" exact component={SeasonById}></Route>
-<<<<<<< HEAD
-            <Route path="/mockups" exact component={MockupIndex}></Route>
-=======
-            <Route
-              path="/episodeById/:id"
-              exact
-              component={EpisodeById}
-            ></Route>
->>>>>>> 478601430b4d2c2a8eaf9eab77b4a08ce75c8c1f
-          </Switch>
-        </div>
+        <Navigation />
+        <Header />
+        <div style={{ height: "47vh" }}></div>
+        <SearchSection />
+        <MainPage />
+        <Switch>
+          <Route path="/" exact render={() => <Index />}></Route>
+          <Route path="/movies" exact component={Movies}></Route>
+          <Route path="/movies/create" exact component={CreateMovie}></Route>
+          <Route path="/moviebyid/:id" exact component={MovieById}></Route>
+          <Route path="/series" exact component={Series}></Route>
+          <Route path="/series/create" exact component={CreateSerie}></Route>
+          <Route path="/seriebyid/:id" exact component={SerieByid}></Route>
+          <Route path="/seasonById/:id" exact component={SeasonById}></Route>
+          <Route path="/episodeById/:id" exact component={EpisodeById}></Route>
+        </Switch>
       </Router>
     </div>
   );
