@@ -7,4 +7,5 @@ export interface ISerieRequest {
   poster: string;
   seasons: number;
   rating: number;
+  type: string;
 }

@@ -1,5 +1,5 @@
-import React, { useState, Fragment, useContext } from "react";
-import { Form, Image, TextArea } from "semantic-ui-react";
+import React, { useState, Fragment, useContext, useCallback } from "react";
+import { Form, Image, TextArea, Dropdown } from "semantic-ui-react";
 import { Redirect } from "react-router-dom";
 import { ISerie } from "../Interfaces/ISerie";
 import { useHistory } from "react-router-dom";
@@ -8,6 +8,18 @@ import { observer } from "mobx-react";
 import { SeriesStore, seriesContext } from "../../Store/SeriesStore";
 const axios = require("axios");
 
+const friendOptions = [
+  {
+    key: "Serie",
+    text: "Serie",
+    value: "Serie",
+  },
+  {
+    key: "Anime",
+    text: "Anime",
+    value: "Anime",
+  },
+];
 export const CreateSerie = observer(() => {
   const seriesStore: SeriesStore = useContext(seriesContext);
   const [name, setName] = useState();
@@ -21,6 +33,7 @@ export const CreateSerie = observer(() => {
   const [rating, setRating] = useState<number>();
   const [genre, setGenre] = useState();
   const [seasons, setSeasons] = useState<number>();
+  const [type, setType] = useState();
 
   const history = useHistory();
   const apiCall = async () => {
@@ -29,6 +42,7 @@ export const CreateSerie = observer(() => {
     if (year) link += `&y=${year}`;
     link += "&plot=full";
     const res = await axios.get(link);
+    console.log("data", res.data);
     return res.data;
   };
   const handleName = (
@@ -74,11 +88,13 @@ export const CreateSerie = observer(() => {
         break;
     }
   };
-
+  const onChange = useCallback((e: any, res: any) => {
+    setType(res.value);
+  }, []);
   const onGetDetails = async () => {
     const res = await apiCall();
 
-    var reg = new RegExp("^[0-9]+");
+    const reg = new RegExp("^[0-9]+");
     const year = +res.Year.match(reg)[0];
 
     setTitle(res.Title);
@@ -100,6 +116,7 @@ export const CreateSerie = observer(() => {
       rating,
       seasons,
       poster,
+      type,
     };
     const id = await seriesStore.postSerie(serie);
 
@@ -197,7 +214,13 @@ export const CreateSerie = observer(() => {
                 label="Serie Seasons"
               />
             </Form.Group>
-
+            <Dropdown
+              placeholder="Select Type"
+              fluid
+              selection
+              options={friendOptions}
+              onChange={onChange}
+            />
             <Form.Button content="Post Serie" />
           </Form>
         )}
