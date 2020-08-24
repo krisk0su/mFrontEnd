@@ -7,13 +7,17 @@
     height: 25em;
     color: blue;
   }
-  border-radius: .7em;
+  border-radius: 0.7em;
   position: relative;
   width: 19em;
   height: 24em;
   background: black;
   margin: 4em 2em;
   img {
+    border-radius: 1em;
+    width: 19em;
+    height: 24em;
+    cursor: pointer;
   }
 
   transition: all 0.3s ease-in-out;

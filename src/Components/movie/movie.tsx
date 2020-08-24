@@ -6,17 +6,8 @@ export const Movie = (props: any) => {
   return (
     <div className="movie">
       <img
-        src="../../static/imgs/breaking-bad"
-        width="100px"
-        height="900px"
+        src={`${imageUrl}`}
         alt=""
-      />
-      <img
-        src="../../static/imgs/breaking-bad"
-        width="100px"
-        height="900px"
-        alt=""
-        className="absolute-image"
       />
     </div>
   );
