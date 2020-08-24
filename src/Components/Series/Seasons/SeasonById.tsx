@@ -1,14 +1,6 @@
 import React, { useContext, Fragment, useEffect, useState } from "react";
 import { observer } from "mobx-react";
-import {
-  Embed,
-  Image,
-  Grid,
-  Header,
-  Button,
-  Segment,
-  Card,
-} from "semantic-ui-react";
+import { Segment, Card } from "semantic-ui-react";
 import { SeriesStore, seriesContext } from "../../../Store/SeriesStore";
 import { CreateEpisode } from "../Episodes/CreateEpisode";
 import { Episode } from "../Episodes/Episode";
@@ -32,7 +24,7 @@ export const SeasonById = observer((props: any) => {
       return <Episode episode={episode} />;
     });
   };
-  console.log("season2", season);
+
   return (
     <div>
       <CreateEpisode seasonId={id} />

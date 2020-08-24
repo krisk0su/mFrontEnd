@@ -12,6 +12,7 @@ import { EpisodeById } from "./Components/Series/Episodes/EpisodeById";
 import { Navigation } from "./Components/navigation/navigation";
 import { Header } from "./Components/header/header";
 import { MainPage } from "./Components/main-page/main-page";
+import { Register } from "./Components/Users/Register";
 import "./assets/main.scss";
 import "./App.css";
 
@@ -21,7 +22,7 @@ export const App = (props: any) => {
       <Router>
         <Navigation />
         <Header />
-        <div style={{height: '63vh'}}></div>
+        <div style={{ height: "63vh" }}></div>
         <MainPage />
         <Switch>
           <Route path="/" exact render={() => <Index />}></Route>
@@ -33,6 +34,7 @@ export const App = (props: any) => {
           <Route path="/seriebyid/:id" exact component={SerieByid}></Route>
           <Route path="/seasonById/:id" exact component={SeasonById}></Route>
           <Route path="/episodeById/:id" exact component={EpisodeById}></Route>
+          <Route path="/register" exact component={Register}></Route>
         </Switch>
       </Router>
     </div>
