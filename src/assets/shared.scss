@@ -10,7 +10,18 @@
 
   transition: all 0.3s ease-in-out;
 }
+.play-btn {
+  padding: 1em;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background: rgba(214, 13, 13, 1) !important;
+  i {
+    margin-right: 0.7em;
+  }
 
+  transition: all .3s ease-in-out;
+}
 // input {
 //   box-shadow: none;
 //   border-radius: .7em;

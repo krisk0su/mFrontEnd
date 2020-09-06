@@ -1,52 +1,38 @@
 @import "../../assets/mixins";
 
 .movie-row {
-  @include centered-flex;
-  border-bottom: 0.3em solid black;
-  background-size: cover;
-  background-repeat: no-repeat;
+  display: flex;
   flex-direction: column;
-  .title {
-    @include centered-flex;
-    background: rgba(0, 0, 0, 0.3);
-    margin: 1.5em 0 0 0;
-    // background: rgba(42, 119, 191, 0.4);
-    h2 {
-      background: rgba(196, 196, 196, 0.6);
+  align-items: flex-start;
+  justify-content: center;
+  padding: 3em;
+  background: rgba(28, 28, 28, 1);
+  border-bottom: 0.15em solid black;
+  border-top: 0.15em solid black;
 
-      padding: 0 1.2em;
-      margin: 0;
-    }
-    hr {
-      margin: 2em;
-      border: 0;
-      height: 0.5em;
-      background-image: linear-gradient(
-        45deg,
-        hsla(0, 0%, 5%, 0),
-        hsla(0, 0%, 5%, 0) 33.33%,
-        hsla(0, 0%, 5%, 1) 33.33%,
-        hsla(0, 0%, 5%, 1) 66.67%,
-        hsla(0, 0%, 5%, 0) 66.67%,
-        hsla(0, 0%, 5%, 0) 100%
-      );
-      background-size: 0.5em 100%;
-      width: 15em;
-    }
+
+  h2 {
+    background: rgba(196, 196, 196, 0.6);
+    text-align: left;
+    font-size: 2em;
+    margin-left: .3em;
+    padding: .1em 1.8em;
+    margin-bottom: 1em;
   }
   .movies {
     @include centered-flex;
+    width: 100%;
   }
 }
-.trending {
-  background-image: url("../../static/imgs/couple-background.jpg");
-}
-.recent {
-  background-image: url("../../static/imgs/sci-fiction-background.jpg");
-}
-.documentaries {
-  background-image: url("../../static/imgs/test-1.jpg");
-}
-.comedies {
-  background-image: url("../../static/imgs/test-2.jpg");
-}
+// .trending {
+//   background-image: url("../../static/imgs/couple-background.jpg");
+// }
+// .recent {
+//   background-image: url("../../static/imgs/sci-fiction-background.jpg");
+// }
+// .documentaries {
+//   background-image: url("../../static/imgs/test-1.jpg");
+// }
+// .comedies {
+//   background-image: url("../../static/imgs/test-2.jpg");
+// }

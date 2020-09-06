@@ -10,22 +10,29 @@ export const Navigation = () => {
           MOVIE SURF
         </NavLink>
       </li>
-      <li className="search-bar">
+      <div>
+        <li>
+          <NavLink to="/series" activeClassName="active-link">
+            TV SHOWS
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/movies" activeClassName="active-link">
+            MOVIES
+          </NavLink>
+        </li>
+      </div>
+      {/* <li className="search-bar">
         <i className="fas fa-search"></i>
-      </li>
-      <li>
-        <NavLink to="/series" activeClassName="active-link">
-          TV SHOWS
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to="/movies" activeClassName="active-link">
-          MOVIES
-        </NavLink>
-      </li>
-
-      <li className="auth-item left-item">LOG IN</li>
-      <li className="auth-item">REGISTER</li>
+      </li> */}
+      <div>
+        <li className="auth-item left-item">
+          <NavLink to="/login">LOG IN</NavLink>
+        </li>
+        <li className="auth-item">
+          <NavLink to="/register">REGISTER</NavLink>
+        </li>
+      </div>
     </ul>
   );
 };

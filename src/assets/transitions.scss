@@ -1,6 +1,6 @@
-.navigation li:hover {
+.navigation li:hover:not(.auth-item) {
   /* color: rgba(42, 119, 191); */
-  border-top: 0.3em solid rgba(42, 119, 191, 1);
+  border-top: 0.3em solid rgba(214, 13, 13, 0.7);
 }
 
 .action-btn:hover {
@@ -8,5 +8,13 @@
   color: white;
 }
 
-input:hover {
+.play-btn:hover {
+  // background: rgba(148, 10, 10, 1);
+  background: black;
+}
+
+.information-links-social li i:hover {
+  border: 0.1em solid rgba(115, 0, 0, 1);
+  color: rgba(115, 0, 0, 1);
+  background: rgba(59, 59, 59, 1);
 }

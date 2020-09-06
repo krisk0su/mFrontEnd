@@ -10,23 +10,22 @@ import { Series } from "./Components/Series/Series";
 import { SeasonById } from "./Components/Series/Seasons/SeasonById";
 import { EpisodeById } from "./Components/Series/Episodes/EpisodeById";
 import { Navigation } from "./Components/navigation/navigation";
-import { Header } from "./Components/header/header";
 import { MainPage } from "./Components/main-page/main-page";
 import { Register } from "./Components/Users/Register";
+import { Footer } from "./Components/footer/footer";
 import "./assets/main.scss";
 import "./App.css";
+import { AllMovies } from "./Components/all-movies/all-movies";
 
 export const App = (props: any) => {
   return (
     <div className="site-wrapper">
       <Router>
         <Navigation />
-        <Header />
-        <div style={{ height: "63vh" }}></div>
-        <MainPage />
         <Switch>
-          <Route path="/" exact render={() => <Index />}></Route>
-          <Route path="/movies" exact component={Movies}></Route>
+          <Route path="/" exact render={() => <MainPage />}></Route>
+          <Route path="/m" exact render={() => <Index />}></Route>
+          <Route path="/movies" exact component={AllMovies}></Route>
           <Route path="/movies/create" exact component={CreateMovie}></Route>
           <Route path="/moviebyid/:id" exact component={MovieById}></Route>
           <Route path="/series" exact component={Series}></Route>
@@ -36,6 +35,7 @@ export const App = (props: any) => {
           <Route path="/episodeById/:id" exact component={EpisodeById}></Route>
           <Route path="/register" exact component={Register}></Route>
         </Switch>
+        <Footer />
       </Router>
     </div>
   );

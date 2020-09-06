@@ -1,0 +1,53 @@
+.movie-info {
+  position: absolute !important;
+  color: rgba(189, 189, 189, 1);
+  top: 40px;
+  left: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: left;
+  padding: 5em 8em 0 0em;
+  p {
+    margin: 1em 0;
+    width: 50ch;
+  }
+  h1,
+  h2 {
+    font-size: 5em !important;
+    margin: 0;
+  }
+  .age-seasons {
+    display: flex;
+    align-items: center;
+    width: 15em;
+    margin: 2em 0;
+
+    .age {
+      background: gray;
+      padding: 0.3em 0.5em;
+      color: white;
+    }
+    .seasons {
+      margin-left: 2em;
+    }
+  }
+
+  .buttons {
+    margin-top: 5em;
+    .right {
+      margin-left: 2em;
+    }
+  }
+}
+.movie-info-wrapper {
+  //background: rgb(2, 0, 36) !important;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(0, 0, 0, 1) 30%,
+    rgba(0, 212, 255, 0) 100%
+  ) !important;
+  z-index: 100;
+}

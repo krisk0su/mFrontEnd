@@ -3,14 +3,10 @@ import { Movie } from "../movie/movie";
 import "./movie-row.scss";
 
 export const MovieRow = (props: any) => {
-  const { movies, title, cls } = props;
+  const { movies, title } = props;
   return (
-    <div className={`movie-row ${cls}`}>
-      <div className="title">
-        <hr />
-        <h2>{title}</h2>
-        <hr />
-      </div>
+    <div className={`movie-row`}>
+      <h2>{title}</h2>
       <div className="movies">
         <Movie
           imageUrl={

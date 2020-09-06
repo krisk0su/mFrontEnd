@@ -1,0 +1,21 @@
+.header {
+  height: 65vh;
+  position: absolute;
+  top: 0;
+  z-index: 9;
+  width: 100%;
+}
+
+.thumbs {
+  display: none;
+}
+.thumbs-wrapper {
+  display: none;
+}
+.control-arrow {
+  padding: 2em !important;
+}
+
+.control-arrow::before {
+  font-size: 2em !important;
+}

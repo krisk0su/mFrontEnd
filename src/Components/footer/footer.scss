@@ -1,0 +1,36 @@
+.footer {
+  display: flex;
+  padding: 3em 4em;
+  background: rgba(38, 38, 38, 1);
+  height: 15em;
+}
+
+.information-links {
+  display: flex;
+  flex-direction: column;
+  margin: 0 6em;
+}
+
+.information-links-social {
+  margin: 7em 0 0 15em;
+  display: flex;
+  flex-direction: row;
+
+  li {
+    height: 2em;
+    width: 3em;
+    margin: 0 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  i {
+    font-size: 1.2em;
+    border: 0.1em solid black;
+    padding: 0.6em;
+    border-radius: 3em;
+    background: rgba(138, 138, 138, 1);
+    transition: all .3s ease-in-out;
+  }
+}
