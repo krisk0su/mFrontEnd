@@ -1,0 +1,30 @@
+.movie-description {
+    position: absolute;
+    top: 215px !important;
+    color: white;
+    left: 100px !important;
+    z-index: 100 !important;
+}
+
+.arrow {
+  position: absolute;
+  top: 300px;
+  background: none;
+  color: rgba(130, 130, 130, 1);
+  border: .1em solid rgba(130, 130, 130, 1);
+  padding: .5em;
+  border-radius: 2em;
+  transition: all .3s ease-in-out;
+
+  i{
+      font-size: 1.5em;
+  }
+}
+
+.arrow-next {
+  right: 80px;
+}
+
+.arrow-back {
+  left: 80px;
+}

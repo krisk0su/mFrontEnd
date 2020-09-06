@@ -51,3 +51,12 @@
   ) !important;
   z-index: 100;
 }
+
+.info-short {
+  top: 330px !important;
+  left: 350px !important;
+
+  .age-seasons {
+    margin: .5em 0;
+  }
+}
