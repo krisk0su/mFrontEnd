@@ -38,16 +38,31 @@
     background: none !important;
     background: rgba(0, 0, 0, 0.7) !important;
     width: 50%;
-    padding: 1em !important;
+    padding: 0.7em !important;
     margin: 0 !important;
     top: 40%;
   }
   &:hover img {
-    filter: blur(2px) brightness(60%);
-    box-shadow: 0 0 16px rgb(214, 13, 13);
+    filter: blur(3px) brightness(40%);
+    box-shadow: 0 10px 10px rgb(214, 13, 13);
   }
   &:hover :not(img) {
     opacity: 1;
+  }
+
+  .age-hover-info {
+    background: gray;
+    color: white;
+    top: 60%;
+    width: 15%;
+    &::after {
+      content: '+';
+    }
+  }
+  .seasons-hover-info {
+    top: 60%;
+    left: 10%;
+    color: white;
   }
 
   transition: all 0.3s ease-in-out;

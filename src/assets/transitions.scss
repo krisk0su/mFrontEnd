@@ -1,5 +1,4 @@
 .navigation li:hover:not(.auth-item) {
-  /* color: rgba(42, 119, 191); */
   border-top: 0.3em solid rgba(214, 13, 13, 0.7);
 }
 
@@ -22,4 +21,8 @@
 .arrow:hover {
   font-size: 1.1em;
   color: rgba(171, 171, 171, 1);
+}
+
+.search-section i:hover {
+  color: rgba(214, 13, 13, 1);
 }

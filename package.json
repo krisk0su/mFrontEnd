@@ -11,6 +11,7 @@
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.7",
     "@types/react-router-dom": "^5.1.5",
+    "@types/react-slick": "^0.23.4",
     "axios": "^0.19.2",
     "mobx": "^5.15.4",
     "mobx-react": "^6.2.2",
@@ -22,7 +23,9 @@
     "react-responsive-carousel": "^3.2.9",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
+    "react-slick": "^0.27.11",
     "semantic-ui-react": "^0.88.2",
+    "slick-carousel": "^1.8.1",
     "typescript": "^3.8.3"
   },
   "scripts": {
