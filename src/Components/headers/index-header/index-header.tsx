@@ -1,7 +1,7 @@
 import React from "react";
 import { SearchSection } from "../../search-section/search-section";
 import { Carousel } from "react-responsive-carousel";
-import { MovieInfo } from "./movie-info/movie-info";
+import { AdditionalMovieInfo } from "./movie-info/additional-movie-info";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import "./index-header.scss";
 
@@ -14,7 +14,7 @@ export const IndexHeader = () => {
           height="750em"
           width="100vw"
         />
-        <MovieInfo
+        <AdditionalMovieInfo
           title={"AMERICAN GANGSTER"}
           age={"18+"}
           seasons={"2"}
@@ -31,7 +31,7 @@ export const IndexHeader = () => {
           height="750em"
           width="100vw"
         />
-        <MovieInfo
+        <AdditionalMovieInfo
           title={"AQUAMAN"}
           age={"14+"}
           seasons={"0"}
@@ -48,7 +48,7 @@ export const IndexHeader = () => {
           height="750em"
           width="100vw"
         />
-        <MovieInfo
+        <AdditionalMovieInfo
           title={"SOME BULLSHIT"}
           age={"16+"}
           seasons={"0"}

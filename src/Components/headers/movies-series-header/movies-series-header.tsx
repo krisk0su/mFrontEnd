@@ -9,7 +9,7 @@ import {
 } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import "./movies-series-header.scss";
-import { MovieInfoShort } from "../index-header/movie-info/movie-info";
+import { MovieInfoShort } from "../index-header/movie-info/additional-movie-info";
 
 export const MoviesSeriesHeader = () => {
   return (

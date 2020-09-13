@@ -1,10 +1,13 @@
 import React from "react";
 import "./movie.scss";
+import { useHistory } from "react-router-dom";
 
 export const Movie = (props: any) => {
   const { imageUrl, title, age, seasons } = props;
+  const history = useHistory();
   const onMovieClick = (e: any) => {
-    console.log("e => ", title);
+    const path = `/movies/details/${title}`;
+    history.push(path);
   };
   return (
     <div className="movie" onClick={onMovieClick}>

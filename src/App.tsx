@@ -13,9 +13,10 @@ import { Navigation } from "./Components/navigation/navigation";
 import { MainPage } from "./Components/main-page/main-page";
 import { Register } from "./Components/Users/Register";
 import { Footer } from "./Components/footer/footer";
+import { AllMovies } from "./Components/all-movies/all-movies";
+import { MovieDetails } from "./Components/movie/movie-details/movie-details";
 import "./assets/main.scss";
 import "./App.css";
-import { AllMovies } from "./Components/all-movies/all-movies";
 
 export const App = (props: any) => {
   return (
@@ -25,7 +26,8 @@ export const App = (props: any) => {
         <Switch>
           <Route path="/" exact render={() => <MainPage />}></Route>
           <Route path="/m" exact render={() => <Index />}></Route>
-          <Route path="/movies" exact component={AllMovies}></Route>
+          <Route path="/movies/details/" component={MovieDetails}></Route>
+          <Route path="/all-movies" exact component={AllMovies}></Route>
           <Route path="/movies/create" exact component={CreateMovie}></Route>
           <Route path="/moviebyid/:id" exact component={MovieById}></Route>
           <Route path="/series" exact component={Series}></Route>

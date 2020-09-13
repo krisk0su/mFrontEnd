@@ -1,7 +1,7 @@
 import React from "react";
-import "./movie-info.scss";
+import "./additional-movie-info.scss";
 
-export const MovieInfo = (props: any) => {
+export const AdditionalMovieInfo = (props: any) => {
   const { title, age, seasons, description } = props;
   return (
     <div className="movie-info-wrapper">
