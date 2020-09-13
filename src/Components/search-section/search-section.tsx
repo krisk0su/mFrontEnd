@@ -1,14 +1,15 @@
 import React from "react";
 import "./search-section.scss";
 
-export const SearchSection = () => {
+export const SearchSection = (props: any) => {
+  const { location } = props;
   return (
     <div className="search-section">
       <ul>
         <li>
           <label htmlFor="">
             <input
-              placeholder="Search movie..."
+              placeholder={`Search in ${location}...`}
               type="text"
               className="search-movie"
             />

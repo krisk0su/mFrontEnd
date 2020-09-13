@@ -1,21 +1,53 @@
 .movie {
-  .absolute-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 20em;
-    height: 25em;
-    color: blue;
-  }
+  cursor: pointer;
   position: relative;
+  display: inline-block;
+  text-align: center;
   width: 19em;
   height: 24em;
-  background: black;
+
   margin: 0em 2em;
   img {
-    width: 19em;
-    height: 24em;
-    cursor: pointer;
+    border-radius: 0.5em;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+  }
+  :not(img) {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    z-index: 1;
+    color: rgb(214, 13, 13);
+
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+  h2 {
+    font-size: 2.5em !important;
+    background: none !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+    width: 50%;
+    text-align: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  p {
+    background: none !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+    width: 50%;
+    padding: 1em !important;
+    margin: 0 !important;
+    top: 40%;
+  }
+  &:hover img {
+    filter: blur(2px) brightness(60%);
+    box-shadow: 0 0 16px rgb(214, 13, 13);
+  }
+  &:hover :not(img) {
+    opacity: 1;
   }
 
   transition: all 0.3s ease-in-out;

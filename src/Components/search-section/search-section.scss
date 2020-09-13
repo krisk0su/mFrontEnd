@@ -2,15 +2,11 @@
 
 .search-section {
   @include centered-flex;
-  justify-content: end;
   height: 5em;
   width: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.8);
   border-top: 0.2em solid black !important;
   border-bottom: 0.2em solid black;
-  position: absolute;
-  bottom: 0;
-  z-index: 3;
   ul {
     @include centered-flex;
     li {
@@ -41,6 +37,7 @@
     background: rgba(0, 0, 0, 0.65);
     height: 2.3em;
     width: 8em;
+    padding-left: 1.5em;
     color: white;
     cursor: pointer;
 

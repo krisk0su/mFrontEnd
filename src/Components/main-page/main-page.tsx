@@ -1,5 +1,6 @@
 import React from "react";
 import { IndexHeader } from "../headers/index-header/index-header"
+import { SearchSection } from "../search-section/search-section";
 import { MovieRow } from "../movie-row/movie-row";
 import "./main-page.scss";
 
@@ -7,6 +8,7 @@ export const MainPage = () => {
   return (
     <div>
       <IndexHeader />
+      <SearchSection location="all" />
       <div className="main">
         <MovieRow title="CURRENTLY TRENDING" />
         <MovieRow title="RECENT RELEASES" />
