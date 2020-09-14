@@ -2,12 +2,13 @@
 
 .movie-row {
   @include flex(center, flex-start, "", column);
-  padding: 3em;
-  background: rgba(28, 28, 28, 1);
+  padding: 1.5em 3em;
+  background: rgba(28, 28, 28, 0.9);
   border-bottom: 0.15em solid black;
   border-top: 0.15em solid black;
 
   h2 {
+    color: black;
     background: rgba(196, 196, 196, 0.6);
     text-align: left;
     font-size: 2em;
