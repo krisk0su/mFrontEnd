@@ -18,7 +18,7 @@ export const SearchSection = (props: any) => {
         </li>
         <li>
           <label htmlFor="movie-name"></label>
-          <select name="movie-genre" className="movie-genre">
+          <select name="movie-genre">
             <option value="">Action</option>
             <option value="">History</option>
             <option value="">Adventure</option>

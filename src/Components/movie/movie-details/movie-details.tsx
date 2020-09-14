@@ -1,26 +1,22 @@
 import React from "react";
+import { MovieDetailsInformation } from "./movie-details-information/movie-details-information";
+import { MovieDetailsEpisodes } from "./movie-details-episodes/movie-details-episodes";
+import { MovieDetailsHeader } from "./movie-details-header/movie-details-header";
 import "./movie-details.scss";
 
 export const MovieDetails = (props: any) => {
   const { imageUrl, description, title, age, seasons, genre } = props;
-  console.log(" image url => ", imageUrl);
   return (
     <div className="movie-details-wrapper">
-      <img
-        src="https://www.wallpaperflare.com/static/56/397/283/breaking-bad-tv-breaking-bad-wallpaper.jpg"
-        alt=""
+      <MovieDetailsHeader imageUrl="https://www.wallpaperflare.com/static/56/397/283/breaking-bad-tv-breaking-bad-wallpaper.jpg" />
+      <MovieDetailsInformation
+        title={title}
+        genres={genre}
+        seasons={seasons}
+        age={age}
+        description={description}
       />
-      <div className="movie-details-header">
-        <div className="start-watching">
-          <i className="fas fa-play-circle"></i>
-          <div>Watch latest episode</div>
-        </div>
-        <div className="movie-interact">
-          <i className="fas fa-share-alt"></i>
-          <i className="fas fa-plus"></i>
-          <i className="fas fa-heart"></i>
-        </div>
-      </div>
+      <MovieDetailsEpisodes />
     </div>
   );
 };

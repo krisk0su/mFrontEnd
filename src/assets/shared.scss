@@ -20,26 +20,17 @@
     margin-right: 0.7em;
   }
 
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
-// input {
-//   box-shadow: none;
-//   border-radius: .7em;
-//   border: 0.2em solid black;
-//   height: 2.2em;
-//   width: 20em;
-//   cursor: pointer;
+select {
+  border-radius: 1.3em;
+  border: 0.1em solid black;
+  background: rgba(0, 0, 0, 0.65);
+  height: 2.3em;
+  width: 8em;
+  padding: 0 1.5em;
+  color: rgb(196, 196, 196);
+  cursor: pointer;
 
-//   transition: all 0.3s ease-in-out;
-// }
-
-// select {
-//   box-shadow: none;
-//   border-radius: .7em;
-//   border: 0.2em solid black;
-//   height: 2.2em;
-//   width: 8em;
-//   cursor: pointer;
-
-//   transition: all 0.3s ease-in-out;
-// }
+  transition: all 0.3s ease-in-out;
+}

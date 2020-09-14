@@ -1,0 +1,18 @@
+.season-input-section {
+  width: 20em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h2 {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.series-grid {
+  margin: 2em 0 4em 0;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(5, 20%);
+  gap: 3em 1em;
+}
