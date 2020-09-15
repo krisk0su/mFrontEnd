@@ -18,9 +18,9 @@
     top: 40%;
     left: 10%;
     .start-watching {
-      @include flex(space-around, center, "", "");
+      @include flex(space-evenly, center, "", "");
       color: white;
-      padding-bottom: 1em;
+      padding-bottom: 1.2em;
       i {
         font-size: 1.5em;
         margin: 0;

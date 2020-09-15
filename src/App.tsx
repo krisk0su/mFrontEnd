@@ -24,18 +24,24 @@ export const App = (props: any) => {
       <Router>
         <Navigation />
         <Switch>
-          <Route path="/" exact render={() => <MainPage />}></Route>
-          <Route path="/m" exact render={() => <Index />}></Route>
-          <Route path="/movies/details/" component={MovieDetails}></Route>
-          <Route path="/all-movies" exact component={AllMovies}></Route>
-          <Route path="/movies/create" exact component={CreateMovie}></Route>
-          <Route path="/moviebyid/:id" exact component={MovieById}></Route>
-          <Route path="/series" exact component={Series}></Route>
-          <Route path="/series/create" exact component={CreateSerie}></Route>
-          <Route path="/seriebyid/:id" exact component={SerieByid}></Route>
-          <Route path="/seasonById/:id" exact component={SeasonById}></Route>
-          <Route path="/episodeById/:id" exact component={EpisodeById}></Route>
-          <Route path="/register" exact component={Register}></Route>
+          <div className="main">
+            <Route path="/" exact render={() => <MainPage />}></Route>
+            <Route path="/m" exact render={() => <Index />}></Route>
+            <Route path="/movies/details/" component={MovieDetails}></Route>
+            <Route path="/all-movies" exact component={AllMovies}></Route>
+            <Route path="/movies/create" exact component={CreateMovie}></Route>
+            <Route path="/moviebyid/:id" exact component={MovieById}></Route>
+            <Route path="/series" exact component={Series}></Route>
+            <Route path="/series/create" exact component={CreateSerie}></Route>
+            <Route path="/seriebyid/:id" exact component={SerieByid}></Route>
+            <Route path="/seasonById/:id" exact component={SeasonById}></Route>
+            <Route
+              path="/episodeById/:id"
+              exact
+              component={EpisodeById}
+            ></Route>
+            <Route path="/register" exact component={Register}></Route>
+          </div>
         </Switch>
         <Footer />
       </Router>

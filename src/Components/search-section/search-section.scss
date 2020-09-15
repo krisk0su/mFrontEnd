@@ -4,7 +4,7 @@
   @include flex(center, center, center, "");
   height: 5em;
   width: 100%;
-  background: rgba(99, 99, 99, 0.7);
+  background: rgba(46, 46, 46, 0.9);
   border-top: 0.2em solid black !important;
   border-bottom: 0em solid black;
   ul {
@@ -19,26 +19,29 @@
     }
   }
   .search-movie {
+    color: white;
     border: 0.1em solid black;
     margin-top: 0.6em !important;
     width: 20em;
     height: 2.3em;
-    background: rgba(0, 0, 0, 0.65);
+    background: rgba(0, 0, 0, 0.7);
     border-radius: 1.3em;
-    color: white;
     padding-left: 1em;
     &::placeholder {
       color: white;
     }
   }
+  select {
+    color: white;
+  }
   i {
+    color: white;
     position: absolute;
     margin-left: 16.3em;
     margin-top: 0.5em;
-    color: white;
     font-size: 1.1em;
     cursor: pointer;
-    
+
     transition: all 0.2s ease-in-out;
   }
 }

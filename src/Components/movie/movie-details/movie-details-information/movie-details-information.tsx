@@ -6,23 +6,26 @@ export const MovieDetailsInformation = (props: any) => {
   return (
     <div className="movie-details-information">
       <h1>{title || "BREAKING BAD"}</h1>
-      <ul>
-        {genres ? (
-          genres.map((g: any) => <li>{g}</li>)
-        ) : (
-          <>
-            <li>Action</li>
-            <li>Drama</li>
-            <li>Something</li>
-          </>
-        )}
-      </ul>
-      <div className="movie-details-flex">
-        <div className="age-restriction">{age || "18"}</div>
-        <div className="movie-details-seasons">{`Seasons: ${
-          seasons ? seasons : "3"
-        }`}</div>
-        <div>{`Release year: ${year ? year : "2020"}`}</div>
+      <div className="movie-details-info-wrapper">
+        <ul>
+          {genres ? (
+            genres.map((g: any) => <li>{g}</li>)
+          ) : (
+            <>
+              <li>Action</li>
+              <li>Drama</li>
+              <li>Something</li>
+            </>
+          )}
+        </ul>
+        <hr/>
+        <div className="movie-details-flex">
+          <div className="age-restriction">{age || "18"}</div>
+          <div className="movie-details-seasons">{`Seasons: ${
+            seasons ? seasons : "3"
+          }`}</div>
+          <div>{`Release year: ${year ? year : "2020"}`}</div>
+        </div>
       </div>
       <div className="movie-details-description">
         {desctiption ||

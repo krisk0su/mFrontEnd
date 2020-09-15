@@ -1,27 +1,45 @@
 @import "../../../../../../assets/mixins";
 
+.test {
+  position: relative;
+}
 .serie {
-  cursor: pointer;
-  height: 15em;
-  width: 15em;
+  border: 2px solid black;
+  overflow: hidden;
+  margin: 0 auto;
+
+  height: 19em;
+  width: 16em;
   img {
-    height: 75%;
+    cursor: pointer;
+    height: 70%;
     width: 100%;
+    transition: all 0.2s ease-in-out;
+    object-fit: cover;
+    z-index: 1;
+
+    &:hover {
+      transform: scale(1.15);
+      filter: blur(2.5px);
+    }
+    
+  }
+  .serie-description-wrapper {
+    @include flex("", center, center, column);
+    padding: 1em 0 0.5em 0;
+    background: rgba(48, 48, 48, 0.8);
   }
   .serie-description {
     @include flex(space-around, center, center, "");
-    background: black;
-    padding: 1em 0 0.5em 0;
+    width: 80%;
+    padding-bottom: 0.5em;
+    z-index: 9;
   }
   .serie-duration {
     color: rgba(214, 13, 13, 1);
     &::after {
       content: "m";
     }
-  }
-  .serie-title {
-    background: black;
-    padding: 0 0 1em 0;
   }
   .episode-number {
     position: absolute;
@@ -31,8 +49,10 @@
     border-radius: 10em;
     height: 2em;
     width: 2em;
+    z-index: 2;
   }
-  .fas {
+  i {
+    cursor: pointer;
     position: absolute;
     margin: 5em 0 0 6.5em;
     padding: 0.5em 0 0 0.2em;
@@ -41,8 +61,10 @@
     border-radius: 10em;
     height: 2em;
     width: 2em;
+    z-index: 2;
 
     transition: all 0.2s ease-in-out;
+
     &:hover {
       background: rgba(255, 255, 255, 1);
     }

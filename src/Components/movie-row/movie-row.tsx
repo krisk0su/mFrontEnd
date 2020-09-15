@@ -21,7 +21,9 @@ export const MovieRow = (props: any) => {
   };
   return (
     <div className={`movie-row`}>
-      <h2>{title}</h2>
+      <div className="title-wrapper">
+        <h2>{title}</h2>
+      </div>
 
       <div className="movies">
         <Slider {...settings}>

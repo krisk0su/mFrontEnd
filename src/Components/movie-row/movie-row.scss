@@ -3,9 +3,9 @@
 .movie-row {
   @include flex(center, flex-start, "", column);
   padding: 1.5em 3em;
-  background: rgba(28, 28, 28, 0.9);
-  border-bottom: 0.15em solid black;
-  border-top: 0.15em solid black;
+  background: rgba(0, 0, 0, 0.8);
+  border-bottom: 0.1em solid rgba(115, 0, 0, 0.5);
+  border-top: 0.1em solid rgba(115, 0, 0, 0.5);
 
   h2 {
     color: black;
@@ -19,4 +19,9 @@
   .movies {
     width: 100%;
   }
+  // .title-wrapper {
+  //   width: 70%;
+  //   height: 5em !important;
+  //   //background: green;
+  // }
 }

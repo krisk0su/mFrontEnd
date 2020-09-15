@@ -3,32 +3,34 @@
 .footer {
   display: flex;
   padding: 3em 4em;
-  background: rgba(38, 38, 38, 1);
+  background: rgb(29, 29, 29);
   height: 16em;
-}
 
-.information-links {
-  @include flex("", "", "", column);
-  margin: 0 6em;
-}
-
-.information-links-social {
-  margin: 7em 0 0 15em;
-  @include flex("", "", "", row);
-
-  li {
-    height: 2em;
-    width: 3em;
-    margin: 0 3em;
-    @include flex(center, center, "", "");
-    cursor: pointer;
+  .information-links {
+    @include flex("", "", "", column);
+    margin: 0 6em;
   }
-  i {
-    font-size: 1.2em;
-    border: 0.1em solid black;
-    padding: 0.6em;
-    border-radius: 3em;
-    background: rgba(138, 138, 138, 1);
-    transition: all 0.3s ease-in-out;
+
+  .information-links-social {
+    margin: 7em 0 0 15em;
+    @include flex("", "", "", row);
+
+    li {
+      height: 2em;
+      width: 3em;
+      margin: 0 3em;
+      @include flex(center, center, "", "");
+      cursor: pointer;
+    }
+    i {
+      font-size: 1.2em;
+      color: black;
+      border: 0.1em solid black;
+      padding: 0.6em;
+      border-radius: 3em;
+      background: rgb(110, 110, 110);
+
+      transition: all 0.2s ease-in-out;
+    }
   }
 }
