@@ -18,7 +18,6 @@
     top: 20%;
     left: 20%;
     z-index: 1;
-    color: rgb(214, 13, 13);
 
     text-align: center;
     width: 100%;
@@ -26,6 +25,7 @@
     transition: all 0.3s ease-in-out;
   }
   h2 {
+    color: rgba(115, 0, 0, 1) !important;
     font-size: 2.5em !important;
     background: none !important;
     background: rgba(0, 0, 0, 0.7) !important;

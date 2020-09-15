@@ -1,6 +1,6 @@
 import React from "react";
-import "./series.scss";
 import { Serie } from "./serie/serie";
+import "./series.scss";
 
 export const Series = () => {
   return (
