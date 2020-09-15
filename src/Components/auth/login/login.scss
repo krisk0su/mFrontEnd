@@ -1,0 +1,37 @@
+@import "../../../assets/mixins";
+
+.login-wrapper {
+  @include flex(center, center, center, "");
+  width: auto;
+  padding: 10em 0;
+
+  form {
+    @include flex(center, flex-start, center, column);
+
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 1.5em;
+    padding: 2em 6em;
+
+    h1 {
+      color: black;
+      background: rgba(243, 18, 18, 0.8);
+      padding: 0 2em 0 1.2em;
+    }
+  }
+  input[type="checkbox"] {
+    cursor: pointer;
+    margin: 1.2em 2em 0 0;
+
+    transition: all 0.2s ease-in-out;
+    &:checked {
+      box-shadow: 0 0 3px 5px rgba(243, 18, 18, 1);
+      border-radius: 0.5em;
+    }
+  }
+
+  .login-helpers {
+    @include flex(space-between, center, center, "");
+    width: 100%;
+    margin: 2em 0;
+  }
+}

@@ -4,7 +4,6 @@
   display: flex;
   padding: 3em 4em;
   background: rgb(29, 29, 29);
-  height: 16em;
 
   .information-links {
     @include flex("", "", "", column);
@@ -12,7 +11,7 @@
   }
 
   .information-links-social {
-    margin: 7em 0 0 15em;
+    margin: 4em 0 0 17em;
     @include flex("", "", "", row);
 
     li {

@@ -34,3 +34,29 @@ select {
 
   transition: all 0.3s ease-in-out;
 }
+
+a {
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    color: rgba(243, 18, 18, 1);
+    transform: scale(1.2);
+  }
+}
+
+.ms-submit-btn {
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  border: 2px solid black;
+  padding: 0.7em 1.2em;
+  border-radius: 0.5em;
+  font-family: "Patua One", cursive;
+  background: rgba(214, 13, 13, 0.7);
+
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+    background: rgba(214, 13, 13, 1);
+  }
+}

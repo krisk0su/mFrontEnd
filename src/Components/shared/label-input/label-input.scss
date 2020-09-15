@@ -1,0 +1,27 @@
+@import "../../../assets/mixins";
+
+.ms-input {
+  cursor: pointer;
+  color: white;
+  width: 20em;
+  padding-left: 1em;
+  height: 2em;
+  margin-top: 0.5em;
+  border: 3px solid rgba(214, 13, 13, 0.7);
+  background: rgba(48, 48, 48, 0.8);
+  border-radius: 0.5em;
+
+  transition: all 0.2s ease-in-out;
+  &:focus {
+    outline: none;
+    //width: 22em;
+    transform: scale(1.1);
+    border: 3px solid rgba(243, 18, 18, 1);
+    background: rgba(0, 0, 0, 1);
+  }
+}
+
+.ms-label {
+  @include flex(center, flex-start, center, column);
+  margin: 0.5em 0;
+}

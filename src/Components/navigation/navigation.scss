@@ -30,6 +30,9 @@
   .auth-item {
     background: rgba(214, 13, 13, 0.7) !important;
     padding: 0.3em 1em;
+    &:hover {
+      color: black !important;
+    }
   }
   .acitve-link {
     color: rgba(214, 13, 13, 0.7) !important;

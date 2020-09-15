@@ -11,12 +11,14 @@ import { SeasonById } from "./Components/Series/Seasons/SeasonById";
 import { EpisodeById } from "./Components/Series/Episodes/EpisodeById";
 import { Navigation } from "./Components/navigation/navigation";
 import { MainPage } from "./Components/main-page/main-page";
-import { Register } from "./Components/Users/Register";
+import { Register } from "./Components/auth/register/register";
 import { Footer } from "./Components/footer/footer";
 import { AllMovies } from "./Components/all-movies/all-movies";
 import { MovieDetails } from "./Components/movie/movie-details/movie-details";
+import { Login } from "./Components/auth/login/login";
 import "./assets/main.scss";
 import "./App.css";
+import { AccountSettings } from "./Components/auth/account-settings/account-settings";
 
 export const App = (props: any) => {
   return (
@@ -40,7 +42,14 @@ export const App = (props: any) => {
               exact
               component={EpisodeById}
             ></Route>
+            <Route path="/register-k" exact component={Register}></Route>
             <Route path="/register" exact component={Register}></Route>
+            <Route path="/login" exact component={Login}></Route>
+            <Route
+              path="account-settings"
+              exact
+              component={AccountSettings}
+            ></Route>
           </div>
         </Switch>
         <Footer />
