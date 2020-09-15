@@ -1,6 +1,7 @@
 @import "../../assets/mixins";
 
 .main {
-    // padding-top: 2em;
+  background: url("../../static/imgs/cinema.jpg") no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
-

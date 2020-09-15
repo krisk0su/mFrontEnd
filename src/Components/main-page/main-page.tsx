@@ -8,8 +8,8 @@ export const MainPage = () => {
   return (
     <div>
       <IndexHeader />
-      <SearchSection location="all" />
       <div className="main">
+        <SearchSection location="all" />
         <MovieRow title="CURRENTLY TRENDING" />
         <MovieRow title="RECENT RELEASES" />
         <MovieRow title="DOCUMENTARIES" />
